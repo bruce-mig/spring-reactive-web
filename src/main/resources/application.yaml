@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-reactive-web
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/reactive
+    username: admin
+    password: pass
+  flyway:
+    url: jdbc:postgresql://localhost:5432/reactive
+    user: admin
+    password: pass
+    enabled: true
+    baseline-on-migrate: true
