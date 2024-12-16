@@ -21,8 +21,8 @@ public class StudentService {
 
     public Flux<Student> findAll() {
         return repository.findAll()
-//                .delayElements(Duration.ofSeconds(1))
-                ;
+                .delayElements(Duration.ofSeconds(1))
+                .take(15); // back pressure
     }
 
     public Mono<Student> findById(Integer id) {
