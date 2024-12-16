@@ -1,6 +1,7 @@
 package com.github.bruce_mig.spring_reactive_web.student;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -14,8 +15,10 @@ public class Student {
     @Id
     private Integer id;
     @Column("firstname")
+    @JsonProperty("first_name")
     private String firstName;
     @Column("lastname")
+    @JsonProperty("last_name")
     private String lastName;
     private int age;
 
