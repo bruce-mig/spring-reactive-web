@@ -1,6 +1,6 @@
 package com.github.bruce_mig.spring_reactive_web.student;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -22,6 +22,11 @@ public class StudentController {
 
     @GetMapping
     Flux<Student> findAll() {
+        return service.findAll();
+    }
+
+    @GetMapping(path = "/stream",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    Flux<Student> findAllStream() {
         return service.findAll();
     }
 
